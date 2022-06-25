@@ -6,6 +6,8 @@ import app from "./Firebase/Config";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 import UsersList from "./UsersList";
+import Router from "./Navigation/router";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [name, setName] = useState("");
@@ -42,28 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <input
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-          placeholder="Name"
-        />
-        <input
-          value={gen}
-          onChange={(e) => {
-            setGen(e.target.value);
-          }}
-          placeholder="gen"
-        />
-        <br />
-        <button>submit</button>
-      </form>
-
-      <br />
-
-      <UsersList />
+      <Router />
     </div>
   );
 }

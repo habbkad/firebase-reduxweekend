@@ -4,3 +4,10 @@ export const addStudent = (student) => {
     payload: student,
   };
 };
+
+export const userAuth = (auth) => {
+  return {
+    type: "USER_AUTH",
+    payload: auth,
+  };
+};
